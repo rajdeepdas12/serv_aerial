@@ -22,15 +22,15 @@ function RecenterMap({ position }) {
   return null;
 }
 
-export default function Map() {
+export default function Map({ refreshKey }) {
   const [threats, setThreats] = useState([]);
 
   useEffect(() => {
-    fetch('/detections.json')
+    fetch(`/detections.json?t=${Date.now()}`)
       .then(res => res.json())
       .then(data => setThreats(data))
       .catch(err => console.log("Awaiting detections..."));
-  }, []);
+  }, [refreshKey]);
 
   const centerPos = threats.length > 0 ? [threats[0].lat, threats[0].lng] : [22.5726, 88.3639];
 

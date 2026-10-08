@@ -1,5 +1,23 @@
 [
     {
+        "id": "manual_1791452408325",
+        "image": "/uploads/annotated_1791452350982_images_i.jpg",
+        "lat": 22.5695,
+        "lng": 88.3621,
+        "label": "bowl",
+        "confidence": 0.2181,
+        "timestamp": "2026-10-08T09:40:08.645Z"
+    },
+    {
+        "id": "upload_1791452005433",
+        "image": "/detections/img_1.jpg",
+        "lat": 22.5711,
+        "lng": 88.3634,
+        "label": "bottle",
+        "confidence": 0.91,
+        "timestamp": "2026-10-08T09:33:25.433Z"
+    },
+    {
         "id": "img_1.jpg",
         "image": "/detections/img_1.jpg",
         "lat": 22.5726,

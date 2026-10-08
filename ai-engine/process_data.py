@@ -4,8 +4,10 @@ import pandas as pd
 import json
 from ultralytics import YOLO
 
-model = YOLO('yolov8n.pt')
-CONTAINER_CLASSES = [39, 41, 45, 58]
+# Load the fine-tuned dengue breeding site model (falling back to yolov8n.pt if training not yet completed)
+model_path = 'best.pt' if os.path.exists('best.pt') else 'yolov8n.pt'
+model = YOLO(model_path)
+print(f"Using model: {model_path} with classes: {model.names}")
 
 # Target public directory in the Next.js dashboard
 NEXTJS_PUBLIC_DIR = "../aedes-dashboard/public"
@@ -24,14 +26,17 @@ for index, row in df.iterrows():
 
     results = model(img_path, verbose=False)[0]
     container_found = False
+    label = None
+    conf = None
 
     for box in results.boxes:
         cls_id = int(box.cls[0])
-        conf = float(box.conf[0])
+        box_conf = float(box.conf[0])
 
-        if cls_id in CONTAINER_CLASSES and conf > 0.30:
+        if box_conf > 0.30:
             container_found = True
-            label = model.names[cls_id]
+            label = model.names.get(cls_id, f"Class {cls_id}")
+            conf = box_conf
             print(f"Detected {label} ({conf:.2f}) in {img_path}")
             break
 

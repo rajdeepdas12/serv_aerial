@@ -44,3 +44,20 @@ Thumbs.db
 
 # Windows Junction / Symlinks
 /serv_aerial
+
+# Large Datasets & Archives
+*.zip
+*.tar.gz
+*.rar
+dataset/
+ai-engine/dataset/
+*.cache
+
+# Model Weights & Training Runs
+runs/
+ai-engine/runs/
+*.pt
+
+# Dashboard Uploads & Temporary Media
+public/uploads/
+aedes-dashboard/public/uploads/
