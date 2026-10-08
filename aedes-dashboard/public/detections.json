@@ -1,0 +1,10 @@
+[
+    {
+        "id": "img_1.jpg",
+        "image": "/detections/img_1.jpg",
+        "lat": 22.5726,
+        "lng": 88.3639,
+        "label": "bottle",
+        "confidence": 0.91
+    }
+]

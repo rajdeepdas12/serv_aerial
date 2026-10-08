@@ -1,0 +1,12 @@
+{
+  "name": "serv_aerial",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Autonomous Edge-AI Dengue Breeding Site Detection System",
+  "scripts": {
+    "dev": "npm --prefix aedes-dashboard run dev",
+    "build": "npm --prefix aedes-dashboard run build",
+    "start": "npm --prefix aedes-dashboard run start",
+    "ai": "powershell -Command \"cd ai-engine; .\\.venv\\Scripts\\python.exe process_data.py\""
+  }
+}
