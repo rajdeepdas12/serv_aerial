@@ -85,3 +85,4 @@ To deploy on physical hardware:
 3. Connect your GPS receiver to GPIO 13 (RXD2).
 4. Insert a MicroSD card formatted as FAT32.
 5. Flash the sketch to the ESP32-CAM.
+.
